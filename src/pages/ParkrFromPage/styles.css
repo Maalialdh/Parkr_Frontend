@@ -1,0 +1,103 @@
+.parkinglot-section {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f7f9fc;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+/*  العنوان */
+.parkinglot {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 10px;
+}
+.parking-title {
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+.parking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.parkinglot-card {
+  width: 220px;
+  height: 140px;
+  background-color: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 18px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.parkinglot-card:hover {
+  transform: translateY(-6px);
+  border-color: #94a3b8;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  background-color: #f1f5f9;
+}
+
+.parking-card{
+    height: auto;
+    width: 150px;
+}
+
+
+/*  صورة الخريطة */
+.parking-section img {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+
+
+
+/*  البطاقات */
+/* .parking-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #E5E9F2;
+} */
+
+.parking-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+/*  النصوص داخل البطاقة */
+.spot-id {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #3E8EDE;
+  margin-bottom: 8px;
+}
+
+.spot-status {
+  color: #777;
+  font-size: 0.95rem;
+}
+
+/*  تعديل بسيط على الهواتف */
+@media (max-width: 768px) {
+  .parkinglot {
+    font-size: 1.6rem;
+  }
+
+  .parking-card {
+    padding: 16px;
+  }
+}

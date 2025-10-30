@@ -1,0 +1,89 @@
+/* ===== ParkrDetailPage Styles ===== */
+.parking-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.parkinglot {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.parking-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 25px;
+}
+
+/*  عرض السبوتات بشكل صف أفقي */
+.parking-grid {
+  display: flex;
+  flex-wrap: wrap;       /* يخليها تنزل سطر جديد إذا ما فيه مساحة */
+  justify-content: center;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+/* تصميم كل سبوت */
+.parking-card {
+  width: 120px;
+  height: 90px;
+  border-radius: 12px;
+  padding: 12px;
+  border: 2px solid #09264d;
+  background-color: #0423244b;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*  ألوان الحالات */
+.available {
+  background-color: #05ff168e;   
+  border-color: #00f35594;
+}
+
+.reserved {
+  background-color: #fcff57;   
+  border-color: #f5f10d;
+}
+
+.occupied {
+  background-color: #ffa8a8;   
+  border-color: #e90b0b;
+}
+
+/* عند التمرير */
+.parking-card:hover {
+  transform: scale(1.05);
+}
+
+.spot-id {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.spot-status {
+  font-size: 0.9rem;
+  color: #475569;
+}
+.btn{
+  margin-top:25px;
+}
+
+
+.parking-section>img{
+width: 150px;
+height: auto;
+}

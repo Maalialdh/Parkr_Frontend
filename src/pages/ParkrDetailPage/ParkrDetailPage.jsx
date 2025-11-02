@@ -15,9 +15,6 @@ export default function ParkrDetailPage() {
     { id: 6, status: "available" },
     { id: 7, status: "occupied" },
     { id: 8, status: "reserved" },
-
-
-    
   ]);
   const getStatusText = (status) => {
     switch (status) {
@@ -58,9 +55,10 @@ export default function ParkrDetailPage() {
           </div>
         ))}
       </div>
-      <button className="btn">Reservtion a Spot</button>
+      {/* <button className="btn">Reservtion a Spot</button> */}
     </section>
     
   </>)
 }
+
 

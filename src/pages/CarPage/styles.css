@@ -1,0 +1,157 @@
+/* الصفحة الرئيسية للسيارات */
+.car-page-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  font-family: Arial, sans-serif;
+}
+
+/* العنوان الرئيسي */
+.car-page-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+/* رسائل الخطأ */
+.car-error {
+  color: #ef4444; /* أحمر */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* النماذج (Forms) */
+.car-form {
+  background-color: #f3f4f6; /* خلفية فاتحة */
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.car-form-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* الحقول */
+.car-input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  transition: border-color 0.2s;
+}
+
+.car-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+/* أزرار الفورم */
+.car-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* أزرار مختلفة حسب الوظيفة */
+.car-button-add {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.car-button-add:hover {
+  background-color: #2563eb;
+}
+
+.car-button-save {
+  background-color: #22c55e;
+  color: white;
+}
+
+.car-button-save:hover {
+  background-color: #16a34a;
+}
+
+.car-button-cancel {
+  background-color: #9ca3af;
+  color: white;
+}
+
+.car-button-cancel:hover {
+  background-color: #6b7280;
+}
+
+.car-button-edit {
+  background-color: #facc15;
+  color: white;
+}
+
+.car-button-edit:hover {
+  background-color: #eab308;
+}
+
+.car-button-delete {
+  background-color: #ef4444;
+  color: white;
+}
+
+.car-button-delete:hover {
+  background-color: #dc2626;
+}
+
+/* حاوية أزرار الفورم */
+.car-form-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* قائمة السيارات */
+.car-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.car-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.1s;
+}
+
+.car-list-item:hover {
+  transform: translateY(-2px);
+}
+
+.car-list-item-model {
+  font-weight: 600;
+  margin: 0;
+}
+
+.car-list-item-info {
+  font-size: 0.875rem;
+  color: #4b5563; /* gray-600 */
+  margin: 0;
+}
+
+.car-list-item-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* رسالة تحميل */
+.car-loading {
+  text-align: center;
+  font-weight: 500;
+  color: #374151; /* gray-700 */
+}

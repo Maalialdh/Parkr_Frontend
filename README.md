@@ -15,7 +15,7 @@ The app allows users to find available parking spots in real time and earn rewar
 
 ---
 
-## 🎯 Features (Frontend Focus)
+##  Features (Frontend Focus)
 
 - **Authentication Pages**: Register, Login, Logout.
 - **Profile Management**: Edit user info and delete account.
@@ -26,7 +26,7 @@ The app allows users to find available parking spots in real time and earn rewar
 
 ---
 
-## 🏗️ Frontend Structure
+##  Frontend Structure
 frontend
 └── src
 │   ├── assets/

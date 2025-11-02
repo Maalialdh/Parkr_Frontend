@@ -2,10 +2,9 @@ import React from 'react'
 
 export default function AboutPage() {
   return (
-    <div>
-<h1>About Parkr App</h1>
-  <p> This is my app</p>
-  
-  
-  </div>
+ <div className="about">
+        <h1 className="welcome">Welcome to Parkr</h1>
+        <p>Find parking spots, add your cars, and make reservations easily.</p>
+      </div>
+
 )}

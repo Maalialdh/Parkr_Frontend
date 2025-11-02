@@ -1,0 +1,116 @@
+/* ===== Body & Global Styles ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* ===== Home Page Container ===== */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* ===== About Section ===== */
+.about {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.welcome {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.about p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* ===== Login Form ===== */
+.form-container.login {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.form-container.login h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #34495e;
+}
+
+.form-container.login label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.form-container.login input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.form-container.login input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Submit Button */
+.form-container.login .btn.submit {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-container.login .btn.submit:hover {
+  background-color: #2980b9;
+}
+
+/* ===== Image Container ===== */
+.image-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.home-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .welcome {
+    font-size: 2rem;
+  }
+
+  .form-container.login {
+    padding: 1.5rem;
+  }
+}

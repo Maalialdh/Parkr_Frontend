@@ -2,7 +2,6 @@
 import './styles.css';
 import React, { useEffect, useState } from 'react';
 import * as carAPI from '../../utilities/car_api';
-import AboutPage from '../AboutPage/AboutPage';
 
 export default function CarPage() {
   const [cars, setCars] = useState([]);
@@ -18,7 +17,7 @@ export default function CarPage() {
       const data = await carAPI.getAll();
       setCars(data);
     } catch (err) {
-      setError("Error loading cars");
+      setError("Oops! The cars didn't show up!. give it another try! ");
     } finally {
       setLoading(false);
     }
@@ -32,11 +31,11 @@ export default function CarPage() {
   const handleAddCar = async (e) => {
     e.preventDefault();
     try {
-      await carAPI.addCar(newCar);
+      await carAPI.createCar(newCar);
       setNewCar({ model: "" });
       fetchCars();
     } catch (err) {
-      setError("Failed to add car");
+      setError("Oops! your car refused to enter the system. Try again!");
     }
   };
 
@@ -48,7 +47,7 @@ export default function CarPage() {
       setEditCar(null);
       fetchCars();
     } catch (err) {
-      setError("Failed to update car");
+      setError("Oops! your car didn't want to update!. Try again!");
     }
   };
 
@@ -58,15 +57,16 @@ export default function CarPage() {
       await carAPI.deleteCar(id);
       fetchCars();
     } catch (err) {
-      setError("Failed to delete car");
+      setError("Oops! The system refused to remove your car!. Try again!");
     }
   };
 
+  // points
+// cons
   return (
     <div className="car-page-container">
-      <h1 className="car-page-title">Cars</h1>
+      {/* <h1 className="car-page-title">Cars</h1> */}
 
-      {error && <p className="car-error">{error}</p>}
 
       {/* Add new car */}
       <form onSubmit={handleAddCar} className="car-form car-form-add">
@@ -115,7 +115,12 @@ export default function CarPage() {
             <li key={car.id} className="car-list-item">
               <div>
                 <p className="car-list-item-model">{car.model}</p>
+                {/* points */}
+                
               </div>
+              <div className='points-car'>
+                 <p>Points: {car.points}</p>
+               </div>
               <div className="car-list-item-actions">
                 <button
                   onClick={() => setEditCar(car)}

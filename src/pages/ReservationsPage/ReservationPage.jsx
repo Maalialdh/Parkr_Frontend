@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import * as reservationAPI from '../../utilities/Reservations_api';
 import * as carAPI from '../../utilities/car_api'; //  تأكد من المسار الصحيح
 import "./styles.css";
-
+import ParkrDetailPage from '../ParkrDetailPage/ParkrDetailPage';
+import ParkingLotPage from '../ParkrFromPage/ParkrFromPage';  
 export default function ReservationPage() {
   const [reservations, setReservations] = useState([]);
   const [cars, setCars] = useState([]);
-const [newRes, setNewRes] = useState({ car: "", spot_number: "", date: "" });
+  const [newRes, setNewRes] = useState({ location: "", car: "", spot_number: "", date: "" });
   const [editRes, setEditRes] = useState(null);
   const [error, setError] = useState("");
+  const [parkingLots, setParkingLots] = useState([]); // يمكن ملؤها من API أو ثابتة
 
 
 
@@ -20,8 +22,22 @@ const [newRes, setNewRes] = useState({ car: "", spot_number: "", date: "" });
       ]);
       setReservations(resData);
       setCars(carData);
+
+      setParkingLots([
+        { id: 1, name: "University Parking" },
+        { id: 2, name: "Mall Parking" },
+        { id: 3, name: "Airport Parking" },
+        { id: 4, name: "Hospital Parking" },
+        { id: 5, name: "The Zone Parking" },
+        { id: 6, name: "Stadium Lot" },
+        { id: 7, name: "Al Nakheel Mall Parking" },
+        { id: 8, name: "King Abdullah Financial District (KAFD) Parking" },
+      ]);
+
+      if (id) setNewRes(prev => ({ ...prev, location: id }));
+
     } catch {
-      setError("Error")
+      setError("Failed to load data.Please try again")
     }
 
   };
@@ -32,22 +48,22 @@ const [newRes, setNewRes] = useState({ car: "", spot_number: "", date: "" });
   const handleAdd = async (c) => {
     c.preventDefault();
     try {
-      await reservationAPI.create(newRes);
-      setNewRes({ car: "", date: "" });
+      await reservationAPI.createRes(newRes);
+      setNewRes({ location: "", car: "", spot_number: "", date: "" });
       allData();
     } catch {
-      setError("فشل في اضافة حجز");
+      setError("Someone parked there a second befor you, Pick a differnt spot ");
     }
   };
 
   const handleUpdate = async (c) => {
     c.preventDefault();
     try {
-      await reservationAPI.update(editRes.id, editRes);
+      await reservationAPI.updateRes(editRes.id, editRes);
       setEditRes(null);
       allData();
     } catch {
-      setError("فشل في تعديل الحجز")
+      setError("Faild to update your reservation. Please try again later. ")
     }
   };
 
@@ -56,20 +72,36 @@ const [newRes, setNewRes] = useState({ car: "", spot_number: "", date: "" });
       await reservationAPI.deleteRes(id);
       allData()
     } catch {
-      setError("فشل في حذف الحجز");
+      setError("Faild to delete your reservation. Please try again later. ");
     }
   };
 
 
 
   return (
-    <div className="reservation-page">
-      <h1>Reservation Page</h1>
-      {error && <p className="error">{error}</p>}
 
-      {/* 🔹 إضافة حجز جديد */}
+
+        <div className="reservation-page">
+      {/* <h1>Reservation Page</h1> */}
+      {/* {error && <p className="error">{error}</p>} */}
+      
+            <ParkingLotPage></ParkingLotPage>
+            
+      {/*  إضافة حجز جديد */}
       <form onSubmit={handleAdd} className="res-form">
         <h2> Add Reservation</h2>
+        <select
+          value={newRes.location}
+          onChange={(e) => setNewRes({ ...newRes, location: e.target.value })}
+          required
+        >
+          <option value="">Select a Parking Lot</option>
+          {parkingLots.map((lot) => (
+            <option key={lot.id} value={lot.id}>
+              {lot.name}
+            </option>
+          ))}
+        </select>
 
         {/* اختيار السيارة */}
         <select
@@ -106,8 +138,9 @@ const [newRes, setNewRes] = useState({ car: "", spot_number: "", date: "" });
 
         <button type="submit">Reserve</button>
       </form>
+      {/* {error && <p className="error">{error}</p>} */}
 
-      {/* 🔹 تعديل حجز */}
+      {/*  تعديل حجز */}
       {editRes && (
         <form onSubmit={handleUpdate} className="res-form edit">
           <h2>Edit Reservation</h2>
@@ -134,7 +167,7 @@ const [newRes, setNewRes] = useState({ car: "", spot_number: "", date: "" });
           <input
             type="date"
             value={editRes.date}
-            onChange={(e)=>setEditRes({...editRes,date:e.target.value})}
+            onChange={(e) => setEditRes({ ...editRes, date: e.target.value })}
           />
 
           <button type="submit">Save</button>
@@ -144,7 +177,7 @@ const [newRes, setNewRes] = useState({ car: "", spot_number: "", date: "" });
         </form>
       )}
 
-      {/* 🔹 عرض الحجوزات */}
+      {/*  عرض الحجوزات */}
       <div className="reservation-list">
         {reservations.length === 0 ? (
           <p>No reservations yet.</p>
@@ -156,7 +189,7 @@ const [newRes, setNewRes] = useState({ car: "", spot_number: "", date: "" });
                 {cars.find((c) => c.id === res.car)?.model || res.car}
               </p>
               <p>
-                 <strong>Spot:</strong> {res.spot_number}
+                <strong>Spot:</strong> {res.Parkspot}
               </p>
               <p>
                 <strong>Date:</strong> {res.date}

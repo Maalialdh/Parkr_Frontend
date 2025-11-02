@@ -5,11 +5,11 @@ export async function getAll() {
   return sendRequest(url, "GET");
 }
 
-export async function create(data) {
+export async function createRes(data) {
   return sendRequest(url, "POST", data);
 }
 
-export async function update(id, data) {
+export async function updateRes(id, data) {
   return sendRequest(`${url}${id}/`, "PUT", data);
 }
 

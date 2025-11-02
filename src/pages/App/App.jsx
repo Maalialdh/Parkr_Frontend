@@ -10,9 +10,8 @@ import ParkrFromPage from '../ParkrFromPage/ParkrFromPage';
 import ReservationPage from '../ReservationsPage/ReservationPage';
 import Navbar from '../../components/Navbar/Navbar';
 import { getUser } from '../../utilities/users-api';
-import SignupPage from '../SignupPage/SignupPage.jsx';
-import LoginPage from "../HomePage/HomePage"; // المسار الصحيح حسب مشروعك
-
+import SignupPage from '../SignupPage/SignUpPage.jsx'
+import LoginPage from '../LoginPage/LoginPage.jsx';
 
  function App() {
   const [user, setUser ] = useState(null)
@@ -62,7 +61,8 @@ import LoginPage from "../HomePage/HomePage"; // المسار الصحيح حس�
            {user ? <>
           <Route path="/home" element={<HomePage user={user} setUser={setUser} />}/>
           <Route path="/" element={<HomePage />} />
-          <Route path="parking" element={<ParkrFromPage />} />
+          <Route path="/login" element={<LoginPage />} /> 
+          <Route path="/parking" element={<ParkrFromPage />} />
           <Route path="/parkinglot/:id" element={<ParkrDetailPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/cars" element={<CarPage />} />
@@ -79,6 +79,7 @@ import LoginPage from "../HomePage/HomePage"; // المسار الصحيح حس�
               <Route path="/signup"element={<SignupPage setUser={setUser} />}/>
               <Route path="/login" element={<LoginPage setUser={setUser} />} />
               <Route path="/*" element={<Navigate to="/login" />} />
+
         </>}
       </Routes>
       </main>

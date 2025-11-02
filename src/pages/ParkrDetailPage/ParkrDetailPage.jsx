@@ -1,7 +1,7 @@
 //  spotتفاصيل الصفحه
 import React,{useState} from "react";
 import './styles.css'
-import map from "../../assets/images/google-maps.png";
+import Map from'/src/assets/images/google-maps.png';
 // APIS
 
 export default function ParkrDetailPage() {
@@ -41,7 +41,7 @@ export default function ParkrDetailPage() {
   return (<>
     <section className="parking-section">
       <h1 className='parkinglot'>Parkinglot</h1>
-      <img src={map} alt="google-maps.png" />
+      <img src={Map} alt="google-maps.png" />
       <h2 className="parking-title"> Available Parking Spots</h2>
       <div className="parking-grid">
         {spots.map((spot) => (

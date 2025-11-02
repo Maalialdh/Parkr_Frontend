@@ -117,4 +117,4 @@ frontend
     <tr><th>Path</th><th>Component</th><th>Action</th><th>Description</th></tr>
     <tr><td><code>/parkingspots</code></td><td>ParkingSpotIndexPage.jsx</td><td>Read</td><td>List all parking spots (static data)</td></tr>
     <tr><td><code>/parkingspots/:id</code></td><td>ParkingSpotDetailPage.jsx</td><td>Read</td><td>View parking spot info</td></tr>
-  </table> -->
+  </table> 

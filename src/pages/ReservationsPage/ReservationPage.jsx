@@ -78,6 +78,19 @@ export default function ReservationPage() {
 
 
 
+  const handleLeave = async (id) => {
+  try {
+    await reservationAPI.leaveReservation(id);
+    allData(); // تحديث البيانات
+  } catch (err) {
+    setError("Failed to mark as left. Please try again.");
+  }
+};
+
+
+
+
+
   return (
 
 
@@ -198,6 +211,8 @@ export default function ReservationPage() {
               <div className="actions">
                 <button onClick={() => setEditRes(res)}>Edit</button>
                 <button onClick={() => handleDelete(res.id)}>Delete</button>
+                <button onClick={() => handleLeave(res.id)}>I Left</button>
+
               </div>
             </div>
           ))

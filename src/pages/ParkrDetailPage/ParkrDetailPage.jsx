@@ -1,13 +1,12 @@
 //  spotتفاصيل الصفحه
 import React,{useState} from "react";
+import { useNavigate } from "react-router"; 
 import './styles.css'
 import Map from'/src/assets/images/parking.jpg';
-// Parkr_Frontend/src/assets/images/parking.jpg
 // APIS
 
 export default function ParkrDetailPage() {
   const [spots, setSpots] = useState([
-
     { id: 1, status: "available" },
     { id: 2, status: "reserved" },
     { id: 3, status: "occupied" },
@@ -16,7 +15,17 @@ export default function ParkrDetailPage() {
     { id: 6, status: "available" },
     { id: 7, status: "occupied" },
     { id: 8, status: "reserved" },
+
   ]);
+
+  const navigate = useNavigate();
+
+  const handleReserve = (id) => {
+    const spot = spots.find((s) => s.id === id);
+    if (spot.status === "available") {
+      navigate("/reservations", { state: { spot_number: id } }); // ✅ نرسل الرقم
+    }
+  };
   const getStatusText = (status) => {
     switch (status) {
       case "available":
@@ -29,19 +38,9 @@ export default function ParkrDetailPage() {
         return "unknown";
     }
   };
-  const handleReserve =(id) => {
-    setSpots((prevSpots) =>
-      prevSpots.map((spot) =>
-        spot.id === id && spot.status === "available"
-          ? { ...spot, status: "reserved" }
-          :spot
-));
-
-  };
 
   return (<>
     <section className="parking-section">
-      {/* <h1 className='parkinglot'>Parkinglot</h1> */}
       <img src={Map} alt="parking.jpg" />
       <h2 className="parking-title"> Available Parking Spots</h2>
       <div className="parking-grid">
@@ -56,9 +55,7 @@ export default function ParkrDetailPage() {
           </div>
         ))}
       </div>
-      {/* <button className="btn">Reservtion a Spot</button> */}
     </section>
-    
   </>)
 }
 

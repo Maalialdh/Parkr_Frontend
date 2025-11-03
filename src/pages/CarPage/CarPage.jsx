@@ -62,11 +62,18 @@ export default function CarPage() {
   };
 
   // points
-// cons
+  const handleAddPoints = async (carId) => {
+  try {
+    await carAPI.addPoints(carId); 
+    fetchCars(); 
+  } catch (err) {
+    setError("Failed to add points. Try again!");
+  }
+};
+
+
   return (
     <div className="car-page-container">
-      {/* <h1 className="car-page-title">Cars</h1> */}
-
 
       {/* Add new car */}
       <form onSubmit={handleAddCar} className="car-form car-form-add">
@@ -98,8 +105,7 @@ export default function CarPage() {
             <button
               type="button"
               onClick={() => setEditCar(null)}
-              className="car-button car-button-cancel"
-            >
+              className="car-button car-button-cancel" >
               Cancel
             </button>
           </div>
@@ -116,24 +122,28 @@ export default function CarPage() {
               <div>
                 <p className="car-list-item-model">{car.model}</p>
                 {/* points */}
-                
               </div>
               <div className='points-car'>
-                 <p>Points: {car.points}</p>
+                 <p>Points: {car.points} ⭐</p>
                </div>
+
               <div className="car-list-item-actions">
                 <button
                   onClick={() => setEditCar(car)}
-                  className="car-button car-button-edit"
-                >
+                  className="car-button car-button-edit">
                   Edit
                 </button>
                 <button
                   onClick={() => handleDeleteCar(car.id)}
-                  className="car-button car-button-delete"
-                >
+                  className="car-button car-button-delete">
                   Delete
                 </button>
+                <button
+                  onClick={() => handleAddPoints(car.id)}
+                  className="car-button car-button-points">
+                  I left 
+                </button>
+
               </div>
             </li>
           ))}

@@ -42,20 +42,11 @@ import LoginPage from '../LoginPage/LoginPage.jsx';
         </div>
         <nav>
           <ul>
-            {/* <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/parking">Find Parking</Link></li>
-            <li><Link to="/cars">Add Car</Link></li>
-            <li><Link to="/reservations">Reservations</Link></li> */}
             <Navbar user={user} setUser={setUser} />
-
-
           </ul>
         </nav>
       </header>
      
-
-      {/* ====== Main Content ====== */}
       <main>
         <Routes>
            {user ? <>
@@ -75,11 +66,10 @@ import LoginPage from '../LoginPage/LoginPage.jsx';
           <Route path="/reservations/:id/delete" element={<ReservationPage deleteRes={true} />} />
          </> : <>
            <Route path="/home" element={<HomePage user={user} setUser={setUser} />}/>
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/signup"element={<SignupPage setUser={setUser} />}/>
-              <Route path="/login" element={<LoginPage setUser={setUser} />} />
-              <Route path="/*" element={<Navigate to="/login" />} />
-
+           <Route path="/about" element={<AboutPage />} />
+           <Route path="/signup"element={<SignupPage setUser={setUser} />}/>
+           <Route path="/login" element={<LoginPage setUser={setUser} />} />
+           <Route path="/*" element={<Navigate to="/login" />} />
         </>}
       </Routes>
       </main>

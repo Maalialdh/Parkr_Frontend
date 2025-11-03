@@ -19,6 +19,6 @@ export async function deleteRes(id) {
 
 
 
-export async function leaveReservation(id) {
-  return sendRequest(`/reservations/${id}/leave/`, "POST");
-}
+// export async function leaveReservation(id) {
+//   return sendRequest(`/reservations/${id}/leave/`, "POST");
+// }

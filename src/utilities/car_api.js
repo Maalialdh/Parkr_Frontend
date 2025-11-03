@@ -1,7 +1,6 @@
 import sendRequest from "./sendRequest";
 
-const url = "/cars/"; // أو أضف api/ لو موجود: "http://127.0.0.1:8000/api/cars/"
-
+const url = "/cars/";
 //Get all cars
 export async function getAll() {
   return sendRequest(url, "GET");
@@ -25,4 +24,8 @@ export async function updateCar(id, carData) {
 // Delete a car
 export async function deleteCar(id) {
   return sendRequest(`${url}${id}/`, "DELETE");
+}
+
+export async function addPoints(carId) {
+  return sendRequest(`${url}${carId}/add_points/`, "POST");
 }

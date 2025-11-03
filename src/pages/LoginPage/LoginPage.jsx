@@ -3,6 +3,7 @@ import "./styles.css";
 import { useState } from "react";
 import { useNavigate } from "react-router"; 
 import * as usersAPI from "../../utilities/users-api";
+// import parkingved from"../../assets/videos/parkinved.mp4";
 
 export default function LoginPage({ user, setUser }) {
   const initialState = { username: "", password: "" };
@@ -20,7 +21,7 @@ export default function LoginPage({ user, setUser }) {
       const loggedInUser = await usersAPI.login(formData);
       if (loggedInUser) {
         setUser(loggedInUser);
-        navigate("/cars"); // Redirect to the cars page after login
+        navigate("/home"); 
       } else {
         alert("Invalid username or password");
       }
@@ -36,10 +37,16 @@ export default function LoginPage({ user, setUser }) {
     const userData = await usersAPI.login(formData);
     setUser(userData);
     setFormData(initialState)
-    if (userData) navigate("/cars")
+    if (userData) navigate("/home")
   }
 
   return (
+    // <div className="login-page">
+    //   <video autoPlay loop muted playsInline className="background-video">
+    //     <source src={parkingved} type="video/mp4" />
+    //   </video>
+    
+
     <div className="home-page">
       {!user && (
         <form onSubmit={handleLogin} className="form-container login">
@@ -67,9 +74,7 @@ export default function LoginPage({ user, setUser }) {
         </form>
       )}
 
-      <div className="image-container">
-        {/* <img src={Parkr} alt="Parkr App" className="home-image" /> */}
-      </div>
     </div>
+    
   );
 }

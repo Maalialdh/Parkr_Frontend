@@ -1,7 +1,8 @@
-// src/pages/CarPage.jsx
-import './styles.css';
-import React, { useEffect, useState } from 'react';
-import * as carAPI from '../../utilities/car_api';
+import "./styles.css";
+import React, { useEffect, useState } from "react";
+import * as carAPI from "../../utilities/car_api";
+import { useNavigate } from "react-router";
+
 
 export default function CarPage() {
   const [cars, setCars] = useState([]);
@@ -9,6 +10,9 @@ export default function CarPage() {
   const [editCar, setEditCar] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const navigate = useNavigate(); // ✅ هنا نجهز التنقل
+
+  // const [highlightedCars, setHighlightedCars] = useState({}); // key: car.id, value: true/false
 
   // Fetch all cars
   const fetchCars = async () => {
@@ -62,19 +66,17 @@ export default function CarPage() {
   };
 
   // points
-  const handleAddPoints = async (carId) => {
-  try {
-    await carAPI.addPoints(carId); 
-    fetchCars(); 
-  } catch (err) {
-    setError("Failed to add points. Try again!");
-  }
-};
-
-
+  // const handleAddPoints = async (carId) => {
+  //   try {
+  //     await carAPI.addPoints(carId);
+  //     setHighlightedCars({ ...highlightedCars, [carId]: true }); // تعيين اللون
+  //     fetchCars();
+  //   } catch (err) {
+  //     setError("Failed to add points. Try again!");
+  //   }
+  // };
   return (
     <div className="car-page-container">
-
       {/* Add new car */}
       <form onSubmit={handleAddCar} className="car-form car-form-add">
         <h2 className="car-form-title">Add a New Car</h2>
@@ -105,7 +107,8 @@ export default function CarPage() {
             <button
               type="button"
               onClick={() => setEditCar(null)}
-              className="car-button car-button-cancel" >
+              className="car-button car-button-cancel"
+            >
               Cancel
             </button>
           </div>
@@ -123,27 +126,30 @@ export default function CarPage() {
                 <p className="car-list-item-model">{car.model}</p>
                 {/* points */}
               </div>
-              <div className='points-car'>
-                 <p>Points: {car.points} ⭐</p>
-               </div>
+              <div className="points-car">
+                <p>Points: {car.points}</p>
+              </div>
 
               <div className="car-list-item-actions">
                 <button
                   onClick={() => setEditCar(car)}
-                  className="car-button car-button-edit">
+                  className="car-button car-button-edit"
+                >
                   Edit
                 </button>
                 <button
                   onClick={() => handleDeleteCar(car.id)}
-                  className="car-button car-button-delete">
+                  className="car-button car-button-delete"
+                >
                   Delete
                 </button>
-                <button
-                  onClick={() => handleAddPoints(car.id)}
-                  className="car-button car-button-points">
-                  I left 
-                </button>
 
+                <button
+                  onClick={() => navigate("/reservations")}
+                  className="car-button car-button-reserve"
+                >
+                  Reserve
+                </button>
               </div>
             </li>
           ))}

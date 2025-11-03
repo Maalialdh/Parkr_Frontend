@@ -1,9 +1,7 @@
 import "./styles.css";
-// import Parkr from "../../assets/images/park.png";
 import { useState } from "react";
 import { useNavigate } from "react-router"; 
 import * as usersAPI from "../../utilities/users-api";
-// import parkingved from"../../assets/videos/parkinved.mp4";
 
 export default function LoginPage({ user, setUser }) {
   const initialState = { username: "", password: "" };
@@ -32,20 +30,15 @@ export default function LoginPage({ user, setUser }) {
   }
 
 
-  async function handleSubmit(evt) {
-    evt.preventDefault();
-    const userData = await usersAPI.login(formData);
-    setUser(userData);
-    setFormData(initialState)
-    if (userData) navigate("/home")
-  }
+  // async function handleSubmit(evt) {
+  //   evt.preventDefault();
+  //   const userData = await usersAPI.login(formData);
+  //   setUser(userData);
+  //   setFormData(initialState)
+  //   if (userData) navigate("/home")
+  // }
 
   return (
-    // <div className="login-page">
-    //   <video autoPlay loop muted playsInline className="background-video">
-    //     <source src={parkingved} type="video/mp4" />
-    //   </video>
-    
 
     <div className="home-page">
       {!user && (

@@ -90,14 +90,3 @@
   color: #777;
   font-size: 0.95rem;
 }
-
-/*  تعديل بسيط على الهواتف */
-@media (max-width: 768px) {
-  .parkinglot {
-    font-size: 1.6rem;
-  }
-
-  .parking-card {
-    padding: 16px;
-  }
-}

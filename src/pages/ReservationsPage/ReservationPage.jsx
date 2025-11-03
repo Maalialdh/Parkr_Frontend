@@ -1,22 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import * as reservationAPI from '../../utilities/Reservations_api';
-import * as carAPI from '../../utilities/car_api'; //  تأكد من المسار الصحيح
+import React, { useEffect, useState } from "react";
+import * as reservationAPI from "../../utilities/Reservations_api";
+import * as carAPI from "../../utilities/car_api";
 import "./styles.css";
-import ParkrDetailPage from '../ParkrDetailPage/ParkrDetailPage';
-import ParkingLotPage from '../ParkrFromPage/ParkrFromPage';  
+import ParkingLotPage from "../ParkrFromPage/ParkrFromPage";
+import { useNavigate } from "react-router";
+
 export default function ReservationPage() {
   const [reservations, setReservations] = useState([]);
   const [cars, setCars] = useState([]);
-  const [newRes, setNewRes] = useState({ location: "", car: "", spot_number: "", date: "" });
+  const [newRes, setNewRes] = useState({
+    location: "",
+    car: "",
+    spot_number: "",
+    date: "",
+  });
   const [editRes, setEditRes] = useState(null);
   const [error, setError] = useState("");
-  const [parkingLots, setParkingLots] = useState([]); // يمكن ملؤها من API أو ثابتة
-
-
+  const [parkingLots, setParkingLots] = useState([]);
+  const navigate = useNavigate();
+  const [completedReservations, setCompletedReservations] = useState([]);
 
   const allData = async () => {
     try {
-      const [resData, carData] = await Promise.all([       //تشغل لي طلبين سيارات والحجوزات
+      const [resData, carData] = await Promise.all([
         reservationAPI.getAll(),
         carAPI.getAll(),
       ]);
@@ -31,28 +37,27 @@ export default function ReservationPage() {
         { id: 5, name: "The Zone Parking" },
         { id: 6, name: "Stadium Lot" },
         { id: 7, name: "Al Nakheel Mall Parking" },
-        { id: 8, name: "King Abdullah Financial District (KAFD) Parking" },
+        { id: 8, name: "KAFD Parking" },
       ]);
-
-      if (id) setNewRes(prev => ({ ...prev, location: id }));
-
     } catch {
-      setError("Failed to load data.Please try again")
+      setError("Failed to load data. Please try again.");
     }
-
   };
+
   useEffect(() => {
     allData();
   }, []);
 
-  const handleAdd = async (c) => {
-    c.preventDefault();
+  const handleAdd = async (e) => {
+    e.preventDefault();
     try {
       await reservationAPI.createRes(newRes);
       setNewRes({ location: "", car: "", spot_number: "", date: "" });
       allData();
     } catch {
-      setError("Someone parked there a second befor you, Pick a differnt spot ");
+      setError(
+        "Someone parked there a second before you. Pick a different spot."
+      );
     }
   };
 
@@ -63,46 +68,39 @@ export default function ReservationPage() {
       setEditRes(null);
       allData();
     } catch {
-      setError("Faild to update your reservation. Please try again later. ")
+      setError("Faild to update your reservation. Please try again later. ");
     }
   };
 
   const handleDelete = async (id) => {
     try {
       await reservationAPI.deleteRes(id);
-      allData()
+      allData();
+      navigate("/cars");
     } catch {
-      setError("Faild to delete your reservation. Please try again later. ");
+      setError("Failed to delete your reservation. Please try again later.");
     }
   };
 
-
-
-  const handleLeave = async (id) => {
-  try {
-    await reservationAPI.leaveReservation(id);
-    allData(); // تحديث البيانات
-  } catch (err) {
-    setError("Failed to mark as left. Please try again.");
-  }
-};
-
-
-
-
+  const handleComplete = async (carId, resId) => {
+    try {
+      await reservationAPI.addPoints(resId);
+      setCompletedReservations((prev) => [...prev, resId]);
+      await allData();
+      navigate("/cars");
+    } catch {
+      setError("Failed to complete reservation. Please try again.");
+    }
+  };
 
   return (
+    <div className="reservation-page">
+      <ParkingLotPage />
 
-
-        <div className="reservation-page">
-      {/* <h1>Reservation Page</h1> */}
-      {/* {error && <p className="error">{error}</p>} */}
-      
-            <ParkingLotPage></ParkingLotPage>
-            
-      {/*  إضافة حجز جديد */}
+      {/* نموذج إضافة حجز */}
       <form onSubmit={handleAdd} className="res-form">
-        <h2> Add Reservation</h2>
+        <h2>Add Reservation</h2>
+
         <select
           value={newRes.location}
           onChange={(e) => setNewRes({ ...newRes, location: e.target.value })}
@@ -116,7 +114,6 @@ export default function ReservationPage() {
           ))}
         </select>
 
-        {/* اختيار السيارة */}
         <select
           value={newRes.car}
           onChange={(e) => setNewRes({ ...newRes, car: e.target.value })}
@@ -130,7 +127,6 @@ export default function ReservationPage() {
           ))}
         </select>
 
-        {/* رقم الموقف */}
         <input
           type="text"
           placeholder="Spot number"
@@ -141,7 +137,6 @@ export default function ReservationPage() {
           required
         />
 
-        {/* التاريخ */}
         <input
           type="date"
           value={newRes.date}
@@ -151,8 +146,8 @@ export default function ReservationPage() {
 
         <button type="submit">Reserve</button>
       </form>
-      {/* {error && <p className="error">{error}</p>} */}
 
+      {/* نموذج تعديل الحجز */}
       {/*  تعديل حجز */}
       {editRes && (
         <form onSubmit={handleUpdate} className="res-form edit">
@@ -169,11 +164,26 @@ export default function ReservationPage() {
             ))}
           </select>
 
+          <select
+            value={editRes.location}
+            onChange={(e) =>
+              setEditRes({ ...editRes, location: e.target.value })
+            }
+            required
+          >
+            <option value="">Select a Parking Lot</option>
+            {parkingLots.map((lot) => (
+              <option key={lot.id} value={lot.id}>
+                {lot.name}
+              </option>
+            ))}
+          </select>
+
           <input
             type="text"
-            value={editRes.spot_number}
+            value={editRes.Parkspot}
             onChange={(e) =>
-              setEditRes({ ...editRes, spot_number: e.target.value })
+              setEditRes({ ...editRes, Parkspot: e.target.value })
             }
           />
 
@@ -190,32 +200,53 @@ export default function ReservationPage() {
         </form>
       )}
 
-      {/*  عرض الحجوزات */}
+      {/* قائمة الحجوزات */}
       <div className="reservation-list">
         {reservations.length === 0 ? (
           <p>No reservations yet.</p>
         ) : (
-          reservations.map((res) => (
-            <div key={res.id} className="reservation-card">
-              <p>
-                <strong>Car:</strong>{" "}
-                {cars.find((c) => c.id === res.car)?.model || res.car}
-              </p>
-              <p>
-                <strong>Spot:</strong> {res.Parkspot}
-              </p>
-              <p>
-                <strong>Date:</strong> {res.date}
-              </p>
+          reservations.map((res) => {
+            const isCompleted =
+              res.is_completed || completedReservations.includes(res.id);
+            return (
+              <div
+                key={res.id}
+                className={`reservation-card ${isCompleted ? "completed" : ""}`}
+              >
+                <p>
+                  <strong>Car:</strong>{" "}
+                  {cars.find((c) => c.id === res.car)?.model || res.car}
+                </p>
+                <p>
+                  <strong>Spot:</strong> {res.spot_number || res.Parkspot}
+                </p>
+                <p>
+                  <strong>Date:</strong> {res.date}
+                </p>
+                <p>
+                  <strong>Parking Lot:</strong> {res.location}
+                </p>
 
-              <div className="actions">
-                <button onClick={() => setEditRes(res)}>Edit</button>
-                <button onClick={() => handleDelete(res.id)}>Delete</button>
-                <button onClick={() => handleLeave(res.id)}>I Left</button>
+                {isCompleted ? (
+                  <p className="status completed-status">✅ Completed</p>
+                ) : (
+                  <p className="status active-status">🟡 Active</p>
+                )}
 
+                <div className="actions">
+                  {!isCompleted && (
+                    <>
+                      <button onClick={() => setEditRes(res)}>Edit</button>
+                      <button onClick={() => handleComplete(res.car, res.id)}>
+                        Complete
+                      </button>
+                    </>
+                  )}
+                  <button onClick={() => handleDelete(res.id)}>Delete</button>
+                </div>
               </div>
-            </div>
-          ))
+            );
+          })
         )}
       </div>
     </div>

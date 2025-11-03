@@ -6,7 +6,6 @@
   font-family: Arial, sans-serif;
 }
 
-/* العنوان الرئيسي */
 .car-page-title {
   text-align: center;
   font-size: 2rem;
@@ -14,16 +13,14 @@
   margin-bottom: 1.5rem;
 }
 
-/* رسائل الخطأ */
 .car-error {
-  color: #ef4444; /* أحمر */
+  color: #ef4444;
   margin-bottom: 1rem;
   text-align: center;
 }
 
-/* النماذج (Forms) */
 .car-form {
-  background-color: #f3f4f6; /* خلفية فاتحة */
+  background-color: #f3f4f6; 
   padding: 1rem;
   border-radius: 0.5rem;
   margin-bottom: 1.5rem;
@@ -140,7 +137,7 @@
 
 .car-list-item-info {
   font-size: 0.875rem;
-  color: #4b5563; /* gray-600 */
+  color: #4b5563;
   margin: 0;
 }
 
@@ -149,9 +146,25 @@
   gap: 0.5rem;
 }
 
-/* رسالة تحميل */
 .car-loading {
   text-align: center;
   font-weight: 500;
-  color: #374151; /* gray-700 */
+  color: #374151;
+}
+
+button{
+  color: white;
+  background-color: rgba(6, 91, 3, 0.768);
+}
+
+
+.car-button-points {
+  background-color: rgba(6, 91, 3, 0.768);
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.car-button-points.highlighted {
+  background-color: yellow;
+  color: black;
 }

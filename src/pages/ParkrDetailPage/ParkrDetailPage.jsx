@@ -23,7 +23,7 @@ export default function ParkrDetailPage() {
   const handleReserve = (id) => {
     const spot = spots.find((s) => s.id === id);
     if (spot.status === "available") {
-      navigate("/reservations", { state: { spot_number: id } }); // ✅ نرسل الرقم
+      navigate("/reservations", { state: { spot_number: id } }); 
     }
   };
   const getStatusText = (status) => {

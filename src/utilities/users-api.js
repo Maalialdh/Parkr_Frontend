@@ -12,13 +12,6 @@ export async function signup(formData) {
     }
 }
 
-// export async function login(formData) {
-//   const response = await sendRequest(`${url}/login/`, "POST", formData);
-//   localStorage.setItem("token", response.access);
-//   return response.user;
-// }
-
-
 export async function login(formData) {
   try {
     const response = await sendRequest(`${url}/login/`, "POST", formData, false); // false → لا تستخدم توكن قديم

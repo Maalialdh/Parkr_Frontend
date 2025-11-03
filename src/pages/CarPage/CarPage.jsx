@@ -10,9 +10,7 @@ export default function CarPage() {
   const [editCar, setEditCar] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const navigate = useNavigate(); // ✅ هنا نجهز التنقل
-
-  // const [highlightedCars, setHighlightedCars] = useState({}); // key: car.id, value: true/false
+  const navigate = useNavigate(); 
 
   // Fetch all cars
   const fetchCars = async () => {
@@ -65,16 +63,7 @@ export default function CarPage() {
     }
   };
 
-  // points
-  // const handleAddPoints = async (carId) => {
-  //   try {
-  //     await carAPI.addPoints(carId);
-  //     setHighlightedCars({ ...highlightedCars, [carId]: true }); // تعيين اللون
-  //     fetchCars();
-  //   } catch (err) {
-  //     setError("Failed to add points. Try again!");
-  //   }
-  // };
+ 
   return (
     <div className="car-page-container">
       {/* Add new car */}

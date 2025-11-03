@@ -30,14 +30,6 @@ export default function LoginPage({ user, setUser }) {
   }
 
 
-  // async function handleSubmit(evt) {
-  //   evt.preventDefault();
-  //   const userData = await usersAPI.login(formData);
-  //   setUser(userData);
-  //   setFormData(initialState)
-  //   if (userData) navigate("/home")
-  // }
-
   return (
 
     <div className="home-page">

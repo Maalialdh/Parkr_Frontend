@@ -147,7 +147,6 @@ export default function ReservationPage() {
         <button type="submit">Reserve</button>
       </form>
 
-      {/* نموذج تعديل الحجز */}
       {/*  تعديل حجز */}
       {editRes && (
         <form onSubmit={handleUpdate} className="res-form edit">
@@ -228,9 +227,9 @@ export default function ReservationPage() {
                 </p>
 
                 {isCompleted ? (
-                  <p className="status completed-status">✅ Completed</p>
+                  <p className="status completed-status"> Completed</p>
                 ) : (
-                  <p className="status active-status">🟡 Active</p>
+                  <p className="status active-status"> Active</p>
                 )}
 
                 <div className="actions">

@@ -8,7 +8,6 @@ The app allows users to find available parking spots in real time and earn rewar
 
 - *React 18*
 - *Vite* (for fast development and builds)
-- *Axios* (for API requests)
 - *React Router* (for navigation)
 - *JWT Authentication*
 - *CSS / Tailwind* (or any preferred styling library)
@@ -31,12 +30,9 @@ frontend
 └── src
 │   ├── assets/
 │   ├── components/
-|   |    ├── Navbar
-|   |    |       ├── Navbar.jsx
-│   │    |       └── styles.css
-|   |    |
-|   |    └── From ├── .jsx
-│   │             └── style.css          
+|   |    └── Navbar
+|   |           └── Navbar.jsx
+│   │                                 
 │   ├── pages/
 │   │   ├── App
 │   │   │   ├── App.jsx
@@ -57,17 +53,29 @@ frontend
 │   │   ├── ParkrDetailPage   
 │   │   │   ├── ParkrDetailPage.jsx   
 │   │   │   └── styles.css 
+|   |   |
+│   │   ├── CarPage   
+│   │   │   ├── CarPage.jsx   
+│   │   │   └── styles.css 
 │   │   │ 
-│   │   ├── ParkrIndexPage    
-│   │   │   ├── ParkrIndexPage.jsx   
+│   │   ├── ReservationsPage    
+│   │   │   ├── ReservationsPage.jsx   
 │   │   │   └── styles.css  
 │   │   │ 
-        └── utilities/
-           ├── Parkr-api.js
-           ├── sendRequest.js
-           ├── Car-api.js
-           ├── Reservations-api.js
-           └── user-api.js
+│   │   │── SignupPage    
+│   │   │   ├── SignupPage.jsx   
+│   │   │   └── styles.css  
+│   │   │ 
+│   │   │── LoginPage    
+│   │   │   ├── LoginPage.jsx   
+│   │   │   └── styles.css
+│   │   │    
+│   │   │     
+        └── utilities
+            ├── sendRequest.js
+            ├── Car-api.js
+            ├── Reservations-api.js
+            └── user-api.js
 
 <h3> Users</h3>
   <table>

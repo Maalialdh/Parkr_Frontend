@@ -217,13 +217,13 @@ export default function ReservationPage() {
                   {cars.find((c) => c.id === res.car)?.model || res.car}
                 </p>
                 <p>
-                  <strong>Spot:</strong> {res.spot_number || res.Parkspot}
+                  <strong>Spot:</strong> {res.spot_number || res.parkspot_info.id}
                 </p>
                 <p>
                   <strong>Date:</strong> {res.date}
                 </p>
                 <p>
-                  <strong>Parking Lot:</strong> {res.lot_name}
+                  <strong>Parking Lot:</strong> {res.parkspot_info.parkinglot.location}
                 </p>
 
                 {isCompleted ? (

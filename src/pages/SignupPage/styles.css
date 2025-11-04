@@ -1,38 +1,74 @@
+/* ===== Signup Form - Fiery Ocean Theme ===== */
+:root {
+  --dark-red: #7a0000;
+  --bright-red: #c8102e;
+  --cream: #fff3d6;
+  --deep-blue: #002b45;
+  --soft-blue: #6b9fbf;
+}
+
+/* === الحاوية العامة للفورم === */
 .form-container.signup {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  background: #f8f9fa;
-  padding: 25px;
-  border-radius: 10px;
+  gap: 18px;
+  background: var(--cream);
+  padding: 35px;
+  border-radius: 16px;
   width: 60%;
-  margin: 30px auto;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 50px auto;
+  box-shadow: 0 4px 15px rgba(0, 43, 69, 0.2);
+  font-family: "Poppins", sans-serif;
+  border: 2px solid rgba(0, 43, 69, 0.1);
+  animation: fadeIn 0.6s ease-in-out;
 }
 
+/* === الحقول === */
 .form-container.signup input {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding: 12px 14px;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  background-color: #fff;
 }
 
+.form-container.signup input:focus {
+  border-color: var(--bright-red);
+  box-shadow: 0 0 6px rgba(200, 16, 46, 0.4);
+  outline: none;
+}
+
+/* === الزر === */
 .form-container.signup button {
   align-self: flex-end;
-  background: #007bff;
-  color: white;
-  padding: 10px 15px;
+  background: var(--deep-blue);
+  color: #fff;
+  padding: 12px 25px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .form-container.signup button:hover {
-  background: #0056b3;
+  background: var(--bright-red);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(200, 16, 46, 0.3);
 }
 
+/* === النصوص المساعدة === */
 .error {
-  color: red;
+  color: var(--bright-red);
   font-size: 13px;
-  margin: 3px 0 0;
+  margin-top: -8px;
+}
+
+/* === Animation === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

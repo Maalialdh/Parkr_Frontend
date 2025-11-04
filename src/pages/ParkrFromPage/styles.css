@@ -1,23 +1,39 @@
+/* === Fiery Ocean Palette === */
+:root {
+  --dark-red: #7a0000;
+  --bright-red: #c8102e;
+  --cream: #fff3d6;
+  --deep-blue: #002b45;
+  --soft-blue: #6b9fbf;
+}
+
+/* === Main Section === */
 .parkinglot-section {
   text-align: center;
   padding: 60px 20px;
-  background-color: #f7f9fc;
+  background: var(--cream);
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
+  color: var(--deep-blue);
 }
 
-/*  العنوان */
+/* === Titles === */
 .parkinglot {
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 700;
-  color: #222;
+  color: var(--dark-red);
   margin-bottom: 10px;
+  text-shadow: 1px 1px 5px rgba(0, 43, 69, 0.15);
 }
+
 .parking-title {
-  color: #666;
+  color: var(--deep-blue);
   font-weight: 500;
   margin-bottom: 40px;
+  font-size: 1.1rem;
 }
+
+/* === Parking Grid === */
 .parking-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -25,68 +41,79 @@
   max-width: 1000px;
   margin: 0 auto;
 }
+
+/* === Individual Parking Cards === */
 .parkinglot-card {
-  width: 220px;
-  height: 140px;
+  width: 100%;
+  min-height: 140px;
   background-color: #ffffff;
-  border: 2px solid #e2e8f0;
+  border: 2px solid var(--soft-blue);
   border-radius: 18px;
-  padding: 18px;
+  padding: 20px;
   cursor: pointer;
   transition: all 0.25s ease-in-out;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 10px rgba(0, 43, 69, 0.1);
+
 }
 
 .parkinglot-card:hover {
   transform: translateY(-6px);
-  border-color: #94a3b8;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-  background-color: #f1f5f9;
+  border-color: var(--bright-red);
+  box-shadow: 0 6px 16px rgba(0, 43, 69, 0.2);
+  background: linear-gradient(145deg, #fff3d6, #ffffff);
 }
 
-.parking-card{
-    height: auto;
-    width: 150px;
-}
-
-
-/*  صورة الخريطة */
-.parking-section img {
-  width: 100px;
-  height: 100px;
-  margin: 20px auto;
-  display: block;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-}
-
-
-
-
-/*  البطاقات */
-/* .parking-card {
-  background: white;
+/* === Parking Card Inner Style === */
+.parking-card-lot {
+  background: var(--soft-blue);
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 43, 69, 0.15);
   transition: all 0.3s ease;
-  cursor: pointer;
-  border: 1px solid #E5E9F2;
-} */
-
-.parking-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  border: 1px solid var(--deep-blue);
 }
 
-/*  النصوص داخل البطاقة */
+.parking-card-lot:hover {
+  transform: translateY(-5px);
+  background: var(--deep-blue);
+}
+
+/* === Spot Info === */
 .spot-id {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #3E8EDE;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--bright-red);
   margin-bottom: 8px;
 }
 
 .spot-status {
-  color: #777;
-  font-size: 0.95rem;
+  color: var(--deep-blue);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* === Parking Map Image === */
+.parking-section img {
+  width: 120px;
+  height: 120px;
+  margin: 25px auto;
+  display: block;
+  filter: drop-shadow(0 3px 6px rgba(0, 43, 69, 0.3));
+}
+
+/* === Hover Animation === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.parkinglot-card {
+  animation: fadeInUp 0.6s ease both;
 }

@@ -2,7 +2,7 @@
 import React,{useState} from "react";
 import { useNavigate } from "react-router"; 
 import './styles.css'
-import Map from'/src/assets/images/parking.jpg';
+// import Map from'/src/assets/images/parking.jpg';
 // APIS
 
 export default function ParkrDetailPage() {
@@ -41,7 +41,7 @@ export default function ParkrDetailPage() {
 
   return (<>
     <section className="parking-section">
-      <img src={Map} alt="parking.jpg" />
+      {/* <img src={Map} alt="parking.jpg" /> */}
       <h2 className="parking-title"> Available Parking Spots</h2>
       <div className="parking-grid">
         {spots.map((spot) => (

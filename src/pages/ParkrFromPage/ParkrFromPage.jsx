@@ -22,7 +22,7 @@ export default function ParkingLotPage() {
 
   return (
     <section className="parking-section">
-      <h1 className="parkinglot">All Parking Locations</h1>
+      <h1 className="parkinglot">All Parking Locations </h1>
       <img src={map} alt="map.png"/>
       <h2 className="parking-title">Select a Parking Lot</h2>
 
@@ -30,7 +30,7 @@ export default function ParkingLotPage() {
         {parkingLots.map((lot) => (
           <div
             key={lot.id}
-            className="parking-card"
+            className="parking-card-lot"
             onClick={() => navigate(`/parkinglot/${lot.id}`)}
           >
             <p className="spot-id">{lot.name}</p>

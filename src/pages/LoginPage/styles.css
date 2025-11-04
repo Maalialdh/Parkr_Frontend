@@ -80,7 +80,7 @@ body {
   font-size: 1.1rem;
   font-weight: bold;
   color: #fff;
-  background-color: #3498db;
+  background-color: #e32626e9;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -88,7 +88,7 @@ body {
 }
 
 .form-container.login .btn.submit:hover {
-  background-color: #2980b9;
+  background-color: #01121d;
 }
 
 /* ===== Image Container ===== */
@@ -150,20 +150,25 @@ body {
   display: block;
   margin: 10px 0 5px;
   text-align: left;
+   color: #e3e3e3;
+
 }
 
 .form-container input {
   width: 100%;
   padding: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #333;
+  font-size: 1rem;
+  transition: box-shadow 0.3s ease;
 }
-
 .btn.submit {
   width: 100%;
   padding: 10px;
-  background: #00bcd4;
+  background: linear-gradient(90deg, #7d5fff, #00bcd4);
   color: white;
   border: none;
   border-radius: 5px;
@@ -172,5 +177,96 @@ body {
 }
 
 .btn.submit:hover {
-  background:#0097a7;
+  background: linear-gradient(90deg, #00bcd4, #7d5fff);
+}
+/* ===== الصفحة ===== */
+.login-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #4b0082, #1e90ff); /* بنفسجي غامق → أزرق ملكي */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== الفيديو الخلفي (اختياري) ===== */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4);
+  z-index: 0;
+}
+
+/* ===== الصندوق ===== */
+.form-container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px); /* تأثير الزجاج الفاخر */
+  padding: 40px;
+  border-radius: 15px;
+  color: #fff;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 30px;
+}
+
+/* ===== العنوان ===== */
+.form-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #e0eaff; /* أزرق فاتح */
+}
+
+/* ===== الحقول ===== */
+.form-container label {
+  display: block;
+  margin: 10px 0 5px;
+  text-align: left;
+  font-weight: 500;
+  color: #e3e3e3;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #333;
+  font-size: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.form-container input:focus {
+  outline: none;
+  box-shadow: 0 0 8px #7d5fff;
+}
+
+/* ===== الزر ===== */
+.btn.submit {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(90deg, #be0606, #00bcd4);
+  color: rgb(92, 5, 5);
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn.submit:hover {
+  background: linear-gradient(90deg, #00bcd4, #ad1313);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
 }

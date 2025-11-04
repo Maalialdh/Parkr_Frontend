@@ -1,119 +1,148 @@
+/* === Root Colors === */
+:root {
+  --dark-red: #7a0000;
+  --bright-red: #c8102e;
+  --cream: #fff3d6;
+  --deep-blue: #002b45;
+  --soft-blue: #6b9fbf;
+}
+
+/* === Page Container === */
 .reservation-page {
-  max-width: 700px;
-  margin: auto;
+  max-width: 800px;
+  margin: 50px auto;
   text-align: center;
+  background: var(--cream);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 43, 69, 0.2);
+  font-family: "Poppins", sans-serif;
+  color: var(--deep-blue);
 }
-
+/* === Title === */
 .page-title {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: var(--dark-red);
+  text-shadow: 1px 1px 6px rgba(0, 43, 69, 0.1);
 }
 
+/* === Reservation Form === */
 .res-form {
-  background: #f9f9f9;
-  padding: 15px;
-  margin-bottom: 20px;
-  border-radius: 10px;
+  background: var(--soft-blue);
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  box-shadow: 0 4px 10px rgba(0, 43, 69, 0.15);
 }
 
 .res-form input,
 .res-form select {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  padding: 10px 15px;
+  border: 2px solid var(--deep-blue);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--deep-blue);
+  background: #fff;
+  transition: 0.3s;
 }
 
+.res-form input:focus,
+.res-form select:focus {
+  border-color: var(--bright-red);
+  box-shadow: 0 0 5px rgba(200, 16, 46, 0.4);
+  outline: none;
+}
 
+/* === Submit Button === */
 .res-form button {
-  background-color: #4a90e2;
+  background-color: var(--bright-red);
   color: #fff;
   font-size: 1rem;
   font-weight: 600;
   padding: 10px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.2s ease;
-}
-.res-form button:hover {
-  background: #1a4f8b;
+  transition: background 0.25s ease;
 }
 
+.res-form button:hover {
+  background: var(--dark-red);
+}
+
+/* === Reservation List === */
 .reservation-list {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
 }
 
 .reservation-card {
-  background: #f3f3f3;
-  border-radius: 10px;
-  padding: 15px;
+  background: #ffffff;
+  border-left: 8px solid var(--bright-red);
+  border-radius: 12px;
+  padding: 18px;
   text-align: left;
+  box-shadow: 0 3px 10px rgba(0, 43, 69, 0.1);
+  transition: transform 0.2s ease, background 0.3s ease;
 }
 
+.reservation-card:hover {
+  transform: scale(1.02);
+  background: #fff9ef;
+}
+
+/* === Action Buttons === */
 .actions {
+  margin-top: 12px;
   display: flex;
-  justify-content: flex-end;
   gap: 10px;
-}
-
-.actions button {
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-.error {
-  color: red;
-  font-weight: bold;
-}
-
-
-
-
-.actions {
-  margin-top: 10px;
-  display: flex;
-  gap: 8px;
 }
 
 .actions button {
   flex: 1;
   padding: 8px 0;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   border: none;
-  transition: background 0.2s ease;
+  transition: 0.25s ease;
+  color: #fff;
 }
 
+/* Edit button */
 .actions button:nth-child(1) {
-  background: #ffc107;
-  color: #fff;
+  background: var(--soft-blue);
 }
-
 .actions button:nth-child(1):hover {
-  background: #e0a800;
+  background: var(--deep-blue);
 }
 
+/* Delete button */
 .actions button:nth-child(2) {
-  background: #dc3545;
-  color: #fff;
+  background: var(--dark-red);
 }
-
 .actions button:nth-child(2):hover {
-  background: #b02a37;
+  background: var(--bright-red);
 }
 
+/* Reserve/Confirm button */
 .actions button:nth-child(3) {
-  background: #28a745;
-  color: #fff;
+  background: var(--bright-red);
+}
+.actions button:nth-child(3):hover {
+  background: var(--dark-red);
 }
 
-.actions button:nth-child(3):hover {
-  background: #218838;
+/* === Error Message === */
+.error {
+  color: var(--bright-red);
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: center;
 }

@@ -1,89 +1,136 @@
-/* ===== ParkrDetailPage Styles ===== */
-.parking-section {
-  text-align: center;
-  padding: 40px 20px;
-  background-color: #f8fafc;
-  min-height: 100vh;
-  font-family: "Poppins", sans-serif;
+/* ===== ParkrDetailPage (Fiery Ocean Theme) ===== */
+:root {
+  --dark-red: #7a0000;
+  --bright-red: #c8102e;
+  --cream: #fff3d6;
+  --deep-blue: #002b45;
+  --soft-blue: #6b9fbf;
+  --success-green: #00b87a;
+  --warning-yellow: #ffd23f;
+  --error-red: #e63946;
+  
 }
 
+/* === الصفحة العامة === */
+.parking-section {
+  text-align: center;
+  padding: 50px 20px;
+  margin-top: 0;
+  background: var(--cream);
+  min-height: 100vh;
+  min-height: auto;
+  font-family: "Poppins", sans-serif;
+  color: var(--deep-blue);
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+/* === العنوان الرئيسي === */
 .parkinglot {
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 700;
-  color: #1e293b;
-  margin-bottom: 10px;
+  color: var(--dark-red);
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 6px rgba(0, 43, 69, 0.2);
 }
 
 .parking-title {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  color: #475569;
-  margin-bottom: 25px;
+  color: var(--deep-blue);
+  margin-bottom: 35px;
 }
 
-/*  عرض السبوتات بشكل صف أفقي */
+/* === الشبكة === */
 .parking-grid {
   display: flex;
-  flex-wrap: wrap;       /* يخليها تنزل سطر جديد إذا ما فيه مساحة */
+  flex-wrap: wrap;
   justify-content: center;
   gap: 25px;
   margin-top: 25px;
 }
 
-/* تصميم كل سبوت */
+/* === الكروت (المواقف) === */
 .parking-card {
-  width: 120px;
-  height: 90px;
-  border-radius: 12px;
-  padding: 12px;
-  border: 2px solid #09264d;
-  background-color: #0423244b;
+  width: 130px;
+  height: 95px;
+  border-radius: 14px;
+  padding: 14px;
+  border: 2px solid var(--deep-blue);
+  background: rgba(0, 43, 69, 0.08);
   cursor: pointer;
   transition: all 0.25s ease-in-out;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 8px rgba(0, 43, 69, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-/*  ألوان الحالات */
+.parking-card:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 14px rgba(0, 43, 69, 0.25);
+}
+
+/* === ألوان الحالات === */
 .available {
-  background-color: #05ff168e;   
-  border-color: #00f35594;
+  background: linear-gradient(135deg, #d0ffe4, #e9fff3);
+  border-color: var(--success-green);
+  color: var(--deep-blue);
 }
 
 .reserved {
-  background-color: #fcff57;   
-  border-color: #f5f10d;
+  background: linear-gradient(135deg, #fff7c2, #fffbe0);
+  border-color: var(--warning-yellow);
+  color: var(--deep-blue);
 }
 
 .occupied {
-  background-color: #ffa8a8;   
-  border-color: #e90b0b;
+  background: linear-gradient(135deg, #ffd6d6, #fff0f0);
+  border-color: var(--error-red);
+  color: var(--dark-red);
 }
 
-/* عند التمرير */
-.parking-card:hover {
-  transform: scale(1.05);
-}
-
+/* === النص داخل البطاقات === */
 .spot-id {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #1e293b;
+  color: var(--bright-red);
 }
 
 .spot-status {
   font-size: 0.9rem;
-  color: #475569;
-}
-.btn{
-  margin-top:25px;
+  color: var(--deep-blue);
 }
 
+/* === الزر === */
+/* .btn {
+  margin-top: 25px;
+  background-color: var(--deep-blue);
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+} */
 
-.parking-section>img{
-width: 150px;
-height: auto;
+.btn:hover {
+  background-color: var(--bright-red);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(200, 16, 46, 0.3);
+}
+
+/* === صورة الخريطة ===
+.parking-section > img {
+  width: 150px;
+  height: auto;
+  filter: drop-shadow(0 3px 6px rgba(0, 43, 69, 0.4));
+} */
+
+/* === Animation === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

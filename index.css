@@ -167,7 +167,6 @@ button:focus-visible {
   background-color: #1a7309;
 }
 
-/* 🔹 زر تسجيل الخروج */
 #logout-form button {
   text-decoration: none;
   color: var(--text-color, #222);
@@ -185,7 +184,6 @@ button:focus-visible {
   color: var(--link-hover-color, #007bff);
 }
 
-/* 🔹 حاوية نموذج التسجيل */
 .form-container.signup {
   display: flex;
   flex-direction: column;
@@ -197,7 +195,6 @@ button:focus-visible {
   margin: 40px auto;
 }
 
-/* 🔹 أزرار النموذج */
 .form-container.signup > button {
   max-width: 200px;
   align-self: flex-end;
@@ -216,7 +213,6 @@ button:focus-visible {
   background-color: #0056b3;
 }
 
-/* 🔹 تنسيق الحقول */
 .form-container.signup input {
   width: 100%;
   padding: 10px;
@@ -226,7 +222,6 @@ button:focus-visible {
   font-size: 15px;
 }
 
-/* 🔹 تنسيق العناوين */
 .form-container.signup h2 {
   text-align: center;
   color: #333;
@@ -234,7 +229,6 @@ button:focus-visible {
   font-weight: 700;
 }
 
-/* 🔹 تنسيق الجدول إن وُجد */
 .form-container.signup > table > tbody > tr > th {
   width: 25%;
   text-align: left;

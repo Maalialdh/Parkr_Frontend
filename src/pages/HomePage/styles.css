@@ -1,10 +1,11 @@
 body {
   margin: 0;
   font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f7fa;
-  color: #333;
+  background-color: #fff3d6; /* cream base */
+  color: #002b45; /* deep blue text */
 }
 
+/* === About Section === */
 .about {
   display: flex;
   flex-direction: column;
@@ -13,24 +14,60 @@ body {
   height: 100vh;
   text-align: center;
   padding: 20px;
-  background: linear-gradient(120deg, #e0f7fa, #ffffff);
-  color: #2c3e50;
-  animation: fadeIn 1s ease-in-out;
   box-sizing: border-box;
+
+  /* Fiery Ocean gradient */
+  background: linear-gradient(135deg, #7a0000 0%, #c8102e 25%, #fff3d6 50%, #002b45 75%, #6b9fbf 100%);
+  background-size: 200% 200%;
+  animation: gradientMove 8s ease infinite;
+
+  color: #fff;
 }
 
+/* === Title === */
 .welcome {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #2c3e50;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fff3d6;
+  text-shadow: 2px 2px 10px rgba(0, 43, 69, 0.3);
+  animation: fadeIn 1.2s ease-in-out;
 }
 
+/* === Paragraph === */
 .about p {
-  font-size: 1.1rem;
-  max-width: 600px;
-  line-height: 1.6;
-  color: #555;
+  font-size: 1.15rem;
+  max-width: 650px;
+  line-height: 1.8;
+  color: #fff;
+  background: rgba(0, 43, 69, 0.3);
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 43, 69, 0.2);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 1.6s ease-in-out;
 }
 
+/* === Animations === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

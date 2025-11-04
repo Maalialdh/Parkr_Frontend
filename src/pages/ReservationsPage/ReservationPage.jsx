@@ -223,7 +223,7 @@ export default function ReservationPage() {
                   <strong>Date:</strong> {res.date}
                 </p>
                 <p>
-                  <strong>Parking Lot:</strong> {res.location}
+                  <strong>Parking Lot:</strong> {res.lot_name}
                 </p>
 
                 {isCompleted ? (

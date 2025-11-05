@@ -260,11 +260,11 @@ npm run preview
 
 ## 1️⃣ Port Already in Use:
 
-# Kill process on port 5173 (macOS/Linux)
+### Kill process on port 5173 (macOS/Linux)
 
 lsof -ti:5173 | xargs kill -9
 
-# Or change port in vite.config.js
+## Or change port in vite.config.js
 
 ---
 
@@ -283,31 +283,33 @@ npm install
 
 ---
 
-## 🧊 Ice Box Features (Future Enhancements)
+# 🧊Ice Box Features (Future Enhancements)
 
-## 1️⃣ Integration with Google Maps:
+  ### 1️⃣ Integration with Google Maps:
 
-Display all parking lots and spots on an interactive Google Map,
-allowing users to locate and navigate to available spots easily.
+    Display all parking lots and spots on an interactive Google Map,
+    allowing users to locate and navigate to available spots easily.
 
-## 2️⃣ Real-time Parking Updates:
+  ### 2️⃣ Real-time Parking Updates:
 
-Implement live synchronization so parking spot statuses update instantly
-when users complete or cancel reservations.
+    Implement live synchronization so parking spot statuses update instantly
+    when users complete or cancel reservations.
 
-## 3️⃣ Rewards System:
+  ### 3️⃣ Rewards System:
 
-Allow users to redeem earned points from released parking spots
-for real rewards at partner locations such as malls, pharmacies, or markets.
+    Allow users to redeem earned points from released parking spots
+    for real rewards at partner locations such as malls, pharmacies, or markets.
 
-## 📝 Additional Notes
+# 📝 Additional Notes
 
 - All API requests use sendRequest.js for token handling and error management.
 - JWT tokens stored securely in localStorage.
 - Role-based navigation logic (Admin vs Regular User) can be extended later.
 - Optimized for modern browsers: Chrome, Firefox, Safari, Edge.
 
-### Project Structure
+---
+
+# Project Structure
 
 ```
 Parkr_Frontend/

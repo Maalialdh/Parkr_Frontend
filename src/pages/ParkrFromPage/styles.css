@@ -7,7 +7,6 @@
   --soft-blue: #6b9fbf;
 }
 
-/* === Main Section === */
 .parkinglot-section {
   text-align: center;
   padding: 60px 20px;
@@ -17,7 +16,6 @@
   color: var(--deep-blue);
 }
 
-/* === Titles === */
 .parkinglot {
   font-size: 2.3rem;
   font-weight: 700;
@@ -33,7 +31,6 @@
   font-size: 1.1rem;
 }
 
-/* === Parking Grid === */
 .parking-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -42,7 +39,6 @@
   margin: 0 auto;
 }
 
-/* === Individual Parking Cards === */
 .parkinglot-card {
   width: 100%;
   min-height: 140px;
@@ -63,7 +59,6 @@
   background: linear-gradient(145deg, #fff3d6, #ffffff);
 }
 
-/* === Parking Card Inner Style === */
 .parking-card-lot {
   background: var(--soft-blue);
   border-radius: 12px;
@@ -79,7 +74,6 @@
   background: var(--deep-blue);
 }
 
-/* === Spot Info === */
 .spot-id {
   font-size: 1.2rem;
   font-weight: 700;
@@ -93,7 +87,6 @@
   font-weight: 500;
 }
 
-/* === Parking Map Image === */
 .parking-section img {
   width: 120px;
   height: 120px;
@@ -102,7 +95,6 @@
   filter: drop-shadow(0 3px 6px rgba(0, 43, 69, 0.3));
 }
 
-/* === Hover Animation === */
 @keyframes fadeInUp {
   from {
     opacity: 0;

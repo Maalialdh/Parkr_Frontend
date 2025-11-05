@@ -3,7 +3,6 @@ import HomePage from '../HomePage/HomePage';
 import ParkrDetailPage from '../ParkrDetailPage/ParkrDetailPage';
 import { Route, Routes,Navigate } from 'react-router';
 import React, { useState, useEffect } from "react";
-import AboutPage from '../AboutPage/AboutPage';
 import car from '../../assets/images/logo.png'
 import CarPage from '../CarPage/CarPage';
 import ParkrFromPage from '../ParkrFromPage/ParkrFromPage';
@@ -15,7 +14,7 @@ import LoginPage from '../LoginPage/LoginPage.jsx';
 
  function App() {
   const [user, setUser ] = useState(null)
-  const routes = ["home", "about", "cars", "reservations", "parking"];
+  const routes = ["home", "cars", "reservations", "parking"];
  
 
 
@@ -55,7 +54,6 @@ import LoginPage from '../LoginPage/LoginPage.jsx';
           <Route path="/login" element={<LoginPage />} /> 
           <Route path="/parking" element={<ParkrFromPage />} />
           <Route path="/parkinglot/:id" element={<ParkrDetailPage />} />
-          <Route path="/about" element={<AboutPage />} />
           <Route path="/cars" element={<CarPage />} />
           <Route path="/cars/new" element={<CarPage createCar={true} />} />
           <Route path="/cars/:id/edit" element={<CarPage editCar={true} />} />
@@ -66,7 +64,6 @@ import LoginPage from '../LoginPage/LoginPage.jsx';
           <Route path="/reservations/:id/delete" element={<ReservationPage deleteRes={true} />} />
          </> : <>
            <Route path="/home" element={<HomePage user={user} setUser={setUser} />}/>
-           <Route path="/about" element={<AboutPage />} />
            <Route path="/signup"element={<SignupPage setUser={setUser} />}/>
            <Route path="/login" element={<LoginPage setUser={setUser} />} />
            <Route path="/*" element={<Navigate to="/login" />} />

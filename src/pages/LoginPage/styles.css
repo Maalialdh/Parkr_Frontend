@@ -1,4 +1,3 @@
-/* ===== Body & Global Styles ===== */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -6,7 +5,6 @@ body {
   color: #333;
 }
 
-/* ===== Home Page Container ===== */
 .home-page {
   display: flex;
   flex-direction: column;
@@ -16,7 +14,6 @@ body {
   box-sizing: border-box;
 }
 
-/* ===== About Section ===== */
 .about {
   text-align: center;
   margin-bottom: 2rem;
@@ -33,7 +30,6 @@ body {
   color: #555;
 }
 
-/* ===== Login Form ===== */
 .form-container.login {
   background-color: #fff;
   padding: 2rem;
@@ -50,7 +46,7 @@ body {
   color: #34495e;
 }
 
-.form-container.login label {
+.form-container.login label, .form-container.signup label {
   display: block;
   margin-bottom: 0.3rem;
   font-weight: 600;
@@ -73,7 +69,6 @@ body {
   outline: none;
 }
 
-/* Submit Button */
 .form-container.login .btn.submit {
   width: 100%;
   padding: 0.8rem;
@@ -91,7 +86,6 @@ body {
   background-color: #01121d;
 }
 
-/* ===== Image Container ===== */
 .image-container {
   margin-top: 2rem;
   text-align: center;
@@ -103,10 +97,6 @@ body {
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
-
-
-
-/*  */
 
 
 .login-page {
@@ -124,7 +114,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.5); /* يخلي الفيديو غامق شوي ليظهر عليه النص */
+  filter: brightness(0.5); 
 }
 
 .form-container {
@@ -179,7 +169,6 @@ body {
 .btn.submit:hover {
   background: linear-gradient(90deg, #00bcd4, #7d5fff);
 }
-/* ===== الصفحة ===== */
 .login-page {
   position: relative;
   width: 100%;
@@ -192,7 +181,6 @@ body {
   align-items: center;
 }
 
-/* ===== الفيديو الخلفي (اختياري) ===== */
 .background-video {
   position: absolute;
   top: 0;
@@ -204,10 +192,9 @@ body {
   z-index: 0;
 }
 
-/* ===== الصندوق ===== */
 .form-container {
   background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px); /* تأثير الزجاج الفاخر */
+  backdrop-filter: blur(12px);
   padding: 40px;
   border-radius: 15px;
   color: #fff;
@@ -218,15 +205,13 @@ body {
   margin-top: 30px;
 }
 
-/* ===== العنوان ===== */
 .form-container h2 {
   margin-bottom: 20px;
   font-size: 24px;
   font-weight: 700;
-  color: #e0eaff; /* أزرق فاتح */
+  color: #e0eaff;
 }
 
-/* ===== الحقول ===== */
 .form-container label {
   display: block;
   margin: 10px 0 5px;
@@ -252,7 +237,6 @@ body {
   box-shadow: 0 0 8px #7d5fff;
 }
 
-/* ===== الزر ===== */
 .btn.submit {
   width: 100%;
   padding: 10px;

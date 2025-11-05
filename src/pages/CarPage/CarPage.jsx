@@ -12,7 +12,6 @@ export default function CarPage() {
   const [error, setError] = useState("");
   const navigate = useNavigate(); 
 
-  // Fetch all cars
   const fetchCars = async () => {
     try {
       setLoading(true);
@@ -29,7 +28,6 @@ export default function CarPage() {
     fetchCars();
   }, []);
 
-  // Add a new car
   const handleAddCar = async (e) => {
     e.preventDefault();
     try {
@@ -41,7 +39,6 @@ export default function CarPage() {
     }
   };
 
-  // Update an existing car
   const handleUpdateCar = async (e) => {
     e.preventDefault();
     try {
@@ -53,7 +50,6 @@ export default function CarPage() {
     }
   };
 
-  // Delete a car
   const handleDeleteCar = async (id) => {
     try {
       await carAPI.deleteCar(id);
@@ -66,7 +62,6 @@ export default function CarPage() {
  
   return (
     <div className="car-page-container">
-      {/* Add new car */}
       <form onSubmit={handleAddCar} className="car-form car-form-add">
         <h2 className="car-form-title">Add a New Car</h2>
         <input
@@ -80,7 +75,6 @@ export default function CarPage() {
         <button className="car-button car-button-add">Add</button>
       </form>
 
-      {/* Edit car */}
       {editCar && (
         <form onSubmit={handleUpdateCar} className="car-form car-form-edit">
           <h2 className="car-form-title">Edit Car</h2>
@@ -104,7 +98,6 @@ export default function CarPage() {
         </form>
       )}
 
-      {/* List of cars */}
       {loading ? (
         <p className="car-loading">Loading...</p>
       ) : (
@@ -113,7 +106,6 @@ export default function CarPage() {
             <li key={car.id} className="car-list-item">
               <div>
                 <p className="car-list-item-model">{car.model}</p>
-                {/* points */}
               </div>
               <div className="points-car">
                 <p>Points: {car.points}</p>

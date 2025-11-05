@@ -1,4 +1,3 @@
-/* ===== ParkrDetailPage (Fiery Ocean Theme) ===== */
 :root {
   --dark-red: #7a0000;
   --bright-red: #c8102e;
@@ -11,7 +10,6 @@
   
 }
 
-/* === الصفحة العامة === */
 .parking-section {
   text-align: center;
   padding: 50px 20px;
@@ -24,7 +22,6 @@
   animation: fadeIn 0.7s ease-in-out;
 }
 
-/* === العنوان الرئيسي === */
 .parkinglot {
   font-size: 2.3rem;
   font-weight: 700;
@@ -40,7 +37,6 @@
   margin-bottom: 35px;
 }
 
-/* === الشبكة === */
 .parking-grid {
   display: flex;
   flex-wrap: wrap;
@@ -49,7 +45,6 @@
   margin-top: 25px;
 }
 
-/* === الكروت (المواقف) === */
 .parking-card {
   width: 130px;
   height: 95px;
@@ -71,7 +66,6 @@
   box-shadow: 0 6px 14px rgba(0, 43, 69, 0.25);
 }
 
-/* === ألوان الحالات === */
 .available {
   background: linear-gradient(135deg, #d0ffe4, #e9fff3);
   border-color: var(--success-green);
@@ -90,7 +84,6 @@
   color: var(--dark-red);
 }
 
-/* === النص داخل البطاقات === */
 .spot-id {
   font-size: 1.1rem;
   font-weight: 600;
@@ -102,19 +95,6 @@
   color: var(--deep-blue);
 }
 
-/* === الزر === */
-/* .btn {
-  margin-top: 25px;
-  background-color: var(--deep-blue);
-  color: #fff;
-  padding: 10px 25px;
-  border-radius: 8px;
-  border: none;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-} */
 
 .btn:hover {
   background-color: var(--bright-red);
@@ -122,14 +102,7 @@
   box-shadow: 0 4px 10px rgba(200, 16, 46, 0.3);
 }
 
-/* === صورة الخريطة ===
-.parking-section > img {
-  width: 150px;
-  height: auto;
-  filter: drop-shadow(0 3px 6px rgba(0, 43, 69, 0.4));
-} */
 
-/* === Animation === */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }

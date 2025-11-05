@@ -1,5 +1,3 @@
-// lot
-import React from "react";
 import { useNavigate } from "react-router";
 import "./styles.css";
 import map from "../../assets/images/google-maps.png";
@@ -7,7 +5,6 @@ import map from "../../assets/images/google-maps.png";
 export default function ParkingLotPage() {
   const navigate = useNavigate();
 
-  // بيانات المواقف
   const parkingLots = [
     { id: 1, name: "University Parking", location: "King Saud University, Riyadh" },
     { id: 2, name: "Mall Parking", location: "Riyadh Gallery Mall, Riyadh" },

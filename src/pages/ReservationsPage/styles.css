@@ -1,3 +1,4 @@
+/* صفحة الحجز  */
 :root {
   --dark-red: #7a0000;
   --bright-red: #c8102e;
@@ -8,14 +9,15 @@
 
 .reservation-page {
   max-width: 800px;
-  margin: 50px auto;
+  margin:auto;
   text-align: center;
-  background: var(--cream);
+  /* background: var(--cream); */
   padding: 30px;
   border-radius: 20px;
-  box-shadow: 0 0 15px rgba(0, 43, 69, 0.2);
+  /* box-shadow: 0 0 15px rgba(0, 43, 69, 0.2); */
   font-family: "Poppins", sans-serif;
   color: var(--deep-blue);
+  margin-top: 50px;
 }
 .page-title {
   font-size: 2rem;
@@ -26,7 +28,8 @@
 }
 
 .res-form {
-  background: var(--soft-blue);
+  background-color: #fff;
+  border-right: 8px solid var(--bright-red);
   padding: 20px;
   margin-bottom: 25px;
   border-radius: 15px;

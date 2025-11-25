@@ -9,8 +9,9 @@
 .car-page-container {
   max-width: 850px;
   margin: 50px auto;
+  margin-top: 60px;
   padding: 30px;
-  background: var(--cream);
+  background:#d7d7d72c;
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(0, 43, 69, 0.2);
   font-family: "Poppins", sans-serif;
@@ -20,18 +21,20 @@
 .car-form {
   display: flex;
   flex-direction: column;
+  border-right:8px solid var(--bright-red);
   gap: 12px;
   margin-bottom: 25px;
   padding: 20px;
   border-radius: 15px;
-  background:#6b9fbf;
+  background:#ffffff;
   box-shadow: 0 0 10px rgba(0, 43, 69, 0.15);
 }
 
 .car-form-title {
   margin: 0;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.4rem
+  ;
   font-weight: 600;
   color: var(--deep-blue);
   letter-spacing: 1px;
@@ -65,6 +68,9 @@
 
 .car-button-add {
   background: var(--bright-red);
+  display: block;
+  margin: 0 auto;
+  
 }
 
 .car-button-add:hover {

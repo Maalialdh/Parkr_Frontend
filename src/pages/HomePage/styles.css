@@ -1,25 +1,19 @@
-body {
-  margin: 0;
-  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fff3d6; 
-  color: #002b45; 
-}
 
 .about {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;   /* مهم: يخليها تغطي الشاشة كاملة */
   text-align: center;
   padding: 20px;
   box-sizing: border-box;
+  margin-top: 20px;
   background: linear-gradient(135deg, #7a0000 0%, #c8102e 25%, #fff3d6 50%, #002b45 75%, #6b9fbf 100%);
   background-size: 200% 200%;
   animation: gradientMove 8s ease infinite;
-
-  color: #fff;
 }
+
 
 .welcome {
   font-size: 3rem;
@@ -34,7 +28,7 @@ body {
   font-size: 1.15rem;
   max-width: 650px;
   line-height: 1.8;
-  color: #fff;
+  color: #ffffff;
   background: rgba(0, 43, 69, 0.3);
   padding: 20px 25px;
   border-radius: 12px;

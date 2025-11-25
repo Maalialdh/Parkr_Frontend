@@ -16,7 +16,7 @@ body {
   text-align: center;
 }
 
-header {
+/* header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,7 +24,24 @@ header {
   color: white;
   padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 5vw, 2rem); 
   height: auto;
+} */
+
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #26679a7c, #043d6939); /* شفاف + احترافي */
+  color: white;
+  padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 5vw, 2rem);
+  top: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(7, 50, 86, 0.3);
+  gap: clamp(1rem, 3vw, 2rem);
+  position: fixed;
+  left: 0;
 }
+
 
 /* شعار الهيدر */
 .header-logo-container h1 {

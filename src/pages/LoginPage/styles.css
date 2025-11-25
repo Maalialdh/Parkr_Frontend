@@ -1,37 +1,18 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
-}
 
-.home-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-  min-height: 100vh;
-  box-sizing: border-box;
-}
-
-.about {
-  text-align: center;
-  margin-bottom: 2rem;
-}
 
 .welcome {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  color: #2c3e50;
+  color: #f6fbff;
 }
 
-.about p {
+/* .about p {
   font-size: 1.1rem;
-  color: #555;
+  color: #f1f1f1e6;
 }
-
-.form-container.login {
-  background-color: #fff;
+ */
+.form-container login{
+  background: rgba(255, 255, 255, 0.08); /* شفاف أكثر */
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
@@ -43,14 +24,14 @@ body {
 .form-container.login h2 {
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #34495e;
+  color: #fcfcfc;
 }
 
 .form-container.login label, .form-container.signup label {
   display: block;
   margin-bottom: 0.3rem;
   font-weight: 600;
-  color: #34495e;
+  color: #f5f9fd;
 }
 
 .form-container.login input {
@@ -69,9 +50,9 @@ body {
   outline: none;
 }
 
-.form-container.login .btn.submit {
+.form-container.login .btn-submit {
   width: 100%;
-  padding: 0.8rem;
+  /* padding: 0.8rem; */
   font-size: 1.1rem;
   font-weight: bold;
   color: #fff;
@@ -82,14 +63,14 @@ body {
   transition: background-color 0.2s;
 }
 
-.form-container.login .btn.submit:hover {
+.form-container.login .btn-submit:hover {
   background-color: #01121d;
 }
 
-.image-container {
+/* .image-container {
   margin-top: 2rem;
   text-align: center;
-}
+} */
 
 .home-image {
   max-width: 100%;
@@ -109,12 +90,13 @@ body {
 
 .background-video {
   position: absolute;
+  margin-top: 30px;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  filter: brightness(0.5); 
+  /* object-fit: cover; */
+  /* filter: brightness(0.5);  */
 }
 
 .form-container {
@@ -155,7 +137,7 @@ body {
   font-size: 1rem;
   transition: box-shadow 0.3s ease;
 }
-.btn.submit {
+.btn-submit {
   width: 100%;
   padding: 10px;
   background: linear-gradient(90deg, #7d5fff, #00bcd4);
@@ -175,34 +157,37 @@ body {
   height: 100vh;
   overflow: hidden;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #4b0082, #1e90ff); /* بنفسجي غامق → أزرق ملكي */
+  /* background: linear-gradient(135deg, #4b0082, #1e90ff); بنفسجي غامق → أزرق ملكي */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .background-video {
-  position: absolute;
+  position: fixed;      /* يخلي الفيديو ثابت ويمتد على كامل الصفحة */
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.4);
-  z-index: 0;
+  margin-top: 55px;
+  filter: brightness(0.6);
+  width: 100vw;         /* عرض الشاشة بالكامل */
+  height: 100vh;        /* طول الشاشة بالكامل */
+  object-fit: cover;    /* يخلي الفيديو يغطي الشاشة بدون تمدد مشوه */
+  z-index: -1;          /* يخليه خلف كل العناصر */
 }
+
+
 
 .form-container {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px);
-  padding: 40px;
+  /* padding: 40px; */
   border-radius: 15px;
   color: #fff;
   width: 320px;
   text-align: center;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 .form-container h2 {
@@ -237,10 +222,10 @@ body {
   box-shadow: 0 0 8px #7d5fff;
 }
 
-.btn.submit {
+.btn-submit{
   width: 100%;
   padding: 10px;
-  background: linear-gradient(90deg, #be0606, #00bcd4);
+  background: linear-gradient(90deg, #be0606a0, #76c7d2);
   color: rgb(92, 5, 5);
   border: none;
   border-radius: 8px;
@@ -249,8 +234,8 @@ body {
   transition: all 0.3s ease;
 }
 
-.btn.submit:hover {
-  background: linear-gradient(90deg, #00bcd4, #ad1313);
+.btn-submit:hover {
+  background: linear-gradient(90deg, #67abb4, #ad1313a1);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
+  /* box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4); */
 }

@@ -1,6 +1,8 @@
 // IMPORTS
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import "./styles.css";
+import parkingved from"../../assets/video/parkinved.mp4"
 
 // APIs
 import * as usersAPI from "../../utilities/users-api.js";
@@ -83,6 +85,14 @@ export default function SignupPage({ setUser }) {
 
     return (
         <div className="signup-container">
+             <video
+                  autoPlay
+                  loop
+                  muted
+                  className="background-video"
+                >
+                  <source src={parkingved} type="video/mp4" />
+                </video>
             <h1>Sign Up</h1>
 
             <form onSubmit={handleSubmit} className="form-container signup">

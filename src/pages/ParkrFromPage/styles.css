@@ -1,21 +1,19 @@
-/* === Fiery Ocean Palette === */
-:root {
-  --dark-red: #7a0000;
-  --bright-red: #c8102e;
-  --cream: #fff3d6;
-  --deep-blue: #002b45;
-  --soft-blue: #6b9fbf;
-}
-
 .parkinglot-section {
   text-align: center;
   padding: 60px 20px;
-  background: var(--cream);
+  background: var(--cream)
+ url("https://i.imgur.com/XE6gBWB.png");
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
   color: var(--deep-blue);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
-
+.parking-section{
+  background-color: #d7d7d72c;
+}
 .parkinglot {
   font-size: 2.3rem;
   font-weight: 700;
@@ -60,18 +58,28 @@
 }
 
 .parking-card-lot {
-  background: var(--soft-blue);
-  border-radius: 12px;
-  padding: 20px;
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 43, 69, 0.15);
-  transition: all 0.3s ease;
-  border: 1px solid var(--deep-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* نص عمودي */
+  align-items: center;     /* نص أفقي */
+  text-align: center;
+  background: #ffffff;
+  padding: 20px 25px;
+  border-radius: 15px;
+  border: 2px solid var(--soft-blue);
+  box-shadow: 0 6px 14px rgba(0, 43, 69, 0.18);
+  cursor: pointer;
+  transition: 0.25s ease;
+  position: relative;
+  text-align: left;
 }
 
 .parking-card-lot:hover {
   transform: translateY(-5px);
-  background: var(--deep-blue);
+   background: rgba(10, 80, 123, 0.15);
+  border-color: var(--bright-red);
+  box-shadow: 0 10px 20px rgba(0, 43, 69, 0.25);
+
 }
 
 .spot-id {
@@ -82,6 +90,7 @@
 }
 
 .spot-status {
+  text-align: center;
   color: var(--deep-blue);
   font-size: 1rem;
   font-weight: 500;
@@ -95,6 +104,15 @@
   filter: drop-shadow(0 3px 6px rgba(0, 43, 69, 0.3));
 }
 
+/* Add the Location Icon */
+.parking-card-lot::before {
+  content: "📍";
+  font-size: 1 rem;
+  position: absolute;
+  top: 30px;
+  right: 18px;
+  color: var(--bright-red);
+}
 @keyframes fadeInUp {
   from {
     opacity: 0;

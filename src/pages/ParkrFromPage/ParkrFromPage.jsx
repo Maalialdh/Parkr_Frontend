@@ -6,7 +6,7 @@ export default function ParkingLotPage() {
   const navigate = useNavigate();
 
   const parkingLots = [
-    { id: 1, name: "University Parking", location: "King Saud University, Riyadh" },
+    { id: 1, name: "University Parking ", location: "King Saud University, Riyadh" },
     { id: 2, name: "Mall Parking", location: "Riyadh Gallery Mall, Riyadh" },
     { id: 3, name: "Airport Parking", location: "King Khalid International Airport" },
     { id: 4, name: "Hospital Parking", location: "King Faisal Specialist Hospital" },

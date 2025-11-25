@@ -1,12 +1,13 @@
+/* index */
 body {
-  margin: 0;
+  /* margin: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
     'Helvetica Neue', sans-serif;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   --nav-bg: rgba(104, 197, 248, 0.7);
   --nav-bg-ff: rgba(104, 197, 248, 0.9);
   --borders: rgb(36, 116, 248) solid 2px;
@@ -28,15 +29,17 @@ body {
 }
 
 #root {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 header {
-  width: 100%;
-  background:#23940c;
-  /* rgba(104, 197, 248, .9) */
-  border-bottom: var(--borders);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 97%;
+  height: 25px;
+  z-index: 999; /* عشان يكون فوق المحتوى */
 }
 
 nav {
@@ -50,8 +53,8 @@ ul {
 }
 
 main {
-  width: 100%;
-  padding: 0 10px;
+  /* width: 100%; */
+  /* padding: 0 10px; */
 }
 
 h2 {
@@ -119,36 +122,6 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-
-/* Button style improvement */
-.btn {
-  background-color: #23940c;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.btn:hover {
-  background-color: #1a7309;
 }
 
 #logout-form button {

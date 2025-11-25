@@ -18,8 +18,8 @@ export default function Navbar({ user, setUser }) {
             <>
             <li><Link to="/">Home</Link></li>
             {/* <li><Link to="/about">About</Link></li> */}
-            {/* <li><Link to="/parking">Find Parking</Link></li> */}
             <li><Link to="/cars">Add Car</Link></li>
+            {/* <li><Link to="/parking">Find Parking</Link></li> */}
             <li><Link to="/reservations">Reservations</Link></li>
             <form id="logout-form" onSubmit={handleLogout}>
                  <button type="submit">Log out</button>

@@ -30,16 +30,43 @@ export default function ReservationPage() {
       setCars(carData);
 
       setParkingLots([
-    { id: 1, name: "University Parking ", location: "King Saud University, Riyadh" },
-    { id: 2, name: "Mall Parking", location: "Riyadh Gallery Mall, Riyadh" },
-    { id: 3, name: "Airport Parking", location: "King Khalid International Airport" },
-    { id: 4, name: "Hospital Parking", location: "King Faisal Specialist Hospital" },
-    { id: 5, name: "The Zone Parking", location: "Takhassusi Street, Riyadh" },
-    { id: 6, name: "Stadium Lot", location: "Mrsool Park, Riyadh" },
-    { id: 7, name: "Al Nakheel Mall Parking", location: "Exit 9, Imam Saud Road, Riyadh" },
-    { id: 8, name: "King Abdullah Financial District (KAFD) Parking", location: "King Fahd Rd, Riyadh" },
-
-  ]);
+        {
+          id: 1,
+          name: "University Parking ",
+          location: "King Saud University, Riyadh",
+        },
+        {
+          id: 2,
+          name: "Mall Parking",
+          location: "Riyadh Gallery Mall, Riyadh",
+        },
+        {
+          id: 3,
+          name: "Airport Parking",
+          location: "King Khalid International Airport",
+        },
+        {
+          id: 4,
+          name: "Hospital Parking",
+          location: "King Faisal Specialist Hospital",
+        },
+        {
+          id: 5,
+          name: "The Zone Parking",
+          location: "Takhassusi Street, Riyadh",
+        },
+        { id: 6, name: "Stadium Lot", location: "Mrsool Park, Riyadh" },
+        {
+          id: 7,
+          name: "Al Nakheel Mall Parking",
+          location: "Exit 9, Imam Saud Road, Riyadh",
+        },
+        {
+          id: 8,
+          name: "King Abdullah Financial District (KAFD) Parking",
+          location: "King Fahd Rd, Riyadh",
+        },
+      ]);
     } catch {
       setError("Failed to load data. Please try again.");
     }
@@ -139,7 +166,7 @@ export default function ReservationPage() {
         />
 
         <input
-          type="date"
+          type="datetime-local"
           value={newRes.date}
           onChange={(e) => setNewRes({ ...newRes, date: e.target.value })}
           required
@@ -188,7 +215,7 @@ export default function ReservationPage() {
           />
 
           <input
-            type="date"
+            type="datetime-local"
             value={editRes.date}
             onChange={(e) => setEditRes({ ...editRes, date: e.target.value })}
           />
@@ -218,13 +245,24 @@ export default function ReservationPage() {
                   {cars.find((c) => c.id === res.car)?.model || res.car}
                 </p>
                 <p>
-                  <strong>Spot:</strong> {res.spot_number || res.parkspot_info.id}
+                  <strong>Spot:</strong>{" "}
+                  {res.spot_number || res.parkspot_info.id}
                 </p>
                 <p>
-                  <strong>Date:</strong> {res.date}
+                  <strong>Date:</strong>{" "}
+                  {new Date(res.date).toLocaleDateString("en-CA")}
                 </p>
                 <p>
-                  <strong>Parking Lot:</strong> {res.parkspot_info.parkinglot.location}
+                  <strong>Time:</strong>{" "}
+                  {new Date(res.date).toLocaleTimeString("en-US", {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
+                </p>
+
+                <p>
+                  <strong>Parking Lot:</strong>{" "}
+                  {res.parkspot_info.parkinglot.location}
                 </p>
 
                 {isCompleted ? (

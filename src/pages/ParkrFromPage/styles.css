@@ -1,8 +1,8 @@
 .parkinglot-section {
   text-align: center;
   padding: 60px 20px;
-  background: var(--cream)
- url("https://i.imgur.com/XE6gBWB.png");
+  /* background: var(--cream)
+ url("https://i.imgur.com/XE6gBWB.png"); */
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
   color: var(--deep-blue);
@@ -13,6 +13,7 @@
 }
 .parking-section{
   background-color: #d7d7d72c;
+  margin-top: auto;
 }
 .parkinglot {
   font-size: 2.3rem;

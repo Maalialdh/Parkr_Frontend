@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import "./styles.css";
+// import spot from "../../assets/images/spote.webp";
 
 export default function ParkrDetailPage() {
   const [spots, setSpots] = useState([
